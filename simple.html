@@ -3,15 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <!-- utf-8 works for most cases -->
     <meta name="viewport" content="width=device-width">
-    <!-- Forcing initial-scale shouldn't be necessary -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Use the latest (edge) version of IE rendering engine -->
     <meta name="x-apple-disable-message-reformatting">
-    <!-- Disable auto-scale in iOS 10 Mail entirely -->
-    <title></title>
-    <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <title>Node News</title>
 
     <!-- Web Font / @font-face : BEGIN -->
     <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
@@ -34,9 +29,6 @@
 
     <!-- CSS Reset -->
     <style>
-        /* What it does: Remove spaces around the email design added by some email clients. */
-        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
-        
         html,
         body {
             margin: 0 auto !important;
@@ -44,25 +36,21 @@
             height: 100% !important;
             width: 100% !important;
         }
-        /* What it does: Stops email clients resizing small text. */
         
         * {
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
         }
-        /* What it does: Centers email on Android 4.4 */
         
         div[style*="margin: 16px 0"] {
             margin: 0 !important;
         }
-        /* What it does: Stops Outlook from adding extra spacing to tables. */
         
         table,
         td {
             mso-table-lspace: 0pt !important;
             mso-table-rspace: 0pt !important;
         }
-        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
         
         table {
             border-spacing: 0 !important;
@@ -74,18 +62,15 @@
         table table table {
             table-layout: auto;
         }
-        /* What it does: Uses a better rendering method when resizing images in IE. */
         
         img {
             -ms-interpolation-mode: bicubic;
         }
-        /* What it does: A work-around for iOS meddling in triggered links. */
         
         *[x-apple-data-detectors] {
             color: inherit !important;
             text-decoration: none !important;
         }
-        /* What it does: A work-around for Gmail meddling in triggered links. */
         
         .x-gmail-data-detectors,
         .x-gmail-data-detectors *,
@@ -93,38 +78,28 @@
             border-bottom: 0 !important;
             cursor: default !important;
         }
-        /* What it does: Prevents Gmail from displaying an download button on large, non-linked images. */
         
         .a6S {
             display: none !important;
             opacity: 0.01 !important;
         }
-        /* If the above doesn't work, add a .g-img class to any image in question. */
         
         img.g-img+div {
             display: none !important;
         }
-        /* What it does: Prevents underlining the button text in Windows 10 */
         
         .button-link {
             text-decoration: none !important;
         }
-        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
-        /* Create one of these media queries for each additional viewport size you'd like to fix */
-        /* Thanks to Eric Lepetit @ericlepetitsf) for help troubleshooting */
         
         @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
-            /* iPhone 6 and 6+ */
             .email-container {
                 min-width: 375px !important;
             }
         }
     </style>
 
-    <!-- Progressive Enhancements -->
     <style>
-        /* What it does: Hover styles for buttons */
-        
         .button-td,
         .button-a {
             transition: all 100ms ease-in;
@@ -138,7 +113,6 @@
         /* Media Queries */
         
         @media screen and (max-width: 480px) {
-            /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
             .fluid {
                 width: 100% !important;
                 max-width: 100% !important;
@@ -146,7 +120,6 @@
                 margin-left: auto !important;
                 margin-right: auto !important;
             }
-            /* What it does: Forces table cells into full-width rows. */
             .stack-column,
             .stack-column-center {
                 display: block !important;
@@ -154,11 +127,9 @@
                 max-width: 100% !important;
                 direction: ltr !important;
             }
-            /* And center justify these ones. */
             .stack-column-center {
                 text-align: center !important;
             }
-            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
             .center-on-narrow {
                 text-align: center !important;
                 display: block !important;
@@ -169,13 +140,23 @@
             table.center-on-narrow {
                 display: inline-block !important;
             }
-            /* What it does: Adjust typography on small screens to improve readability */
             .email-container p {
                 font-size: 17px !important;
                 line-height: 22px !important;
             }
         }
     </style>
+    <!-- Background-image for logo -->
+    <style>
+        .test {
+            background-image: url(images/logo.png);
+            background-position: 5% 50%;
+            background-repeat: no-repeat;
+            background-size: auto 30%";
+
+        }
+    </style>
+
 
     <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
     <!--[if gte mso 9]>
@@ -191,20 +172,9 @@
 
 <body width="100%" bgcolor="#222222" style="margin: 0; mso-line-height-rule: exactly;">
     <center style="width: 100%; background: #2b42b2; text-align: left;">
-
-        <!-- Visually Hidden Preheader Text : BEGIN -->
-        <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;">
-            (Optional) This text will appear in the inbox preview, but not the email body.
-        </div>
-        <!-- Visually Hidden Preheader Text : END -->
-
-        <!--
-            Set the email width. Defined in two places:
-            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
-            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
-            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
-        -->
-        <table role="presentation" bgcolor="#FFF" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="height: 65px; background-image: url(images/logo.png); background-position: 5% 50%; background-repeat: no-repeat; background-size: auto 30%">
+        <!-- Email Header : BEGIN -->
+        <table role="presentation" class="test" bgcolor="#ffffff" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="height: 65px; background-image: url(images/logo.png); background-position: 5% 50%; background-repeat: no-repeat; background-size: auto 30%"
+            ;>
             <tr>
                 <td style="padding: 5px 0; text-align: center;display: table-cell; vertical-align: middle;">
                     <h1 style="font-family: Arial, Helvetica, sans-serif; margin: 0 auto; "> Hello </h1>
@@ -214,44 +184,44 @@
 
         </table>
 
-        <div style="max-width: 680px; margin: auto; " class="email-container ">
-            <!--[if mso]>
-            <table role="presentation " aria-hidden="true " cellspacing="0 " cellpadding="0 " border="0 " width="680 " align="center ">
-            <tr>
-            <td>
-            <![endif]-->
+        <!-- Email Header : END -->
+        <!-- Email Body : BEGIN -->
 
-            <!-- Email Header : BEGIN -->
+        <div style="max-width: 680px; margin: 0 auto; " class="email-container ">
 
-            <!-- Email Header : END -->
 
-            <!-- Email Body : BEGIN -->
+
             <table role="presentation " aria-hidden="true " cellspacing="0 " cellpadding="0 " border="0 " align="center " width="100% " style="max-width: 680px; " class="email-container ">
-
-                <!-- Hero Image, Flush : BEGIN -->
+                <!-- Column Space on Top -->
                 <tr>
                     <td bgcolor="#2b42b2" style="height:50px;">
 
                     </td>
                 </tr>
+                <!-- END - Column Space on Top -->
+                <!-- Column Ronded corners Top -->
                 <tr>
-                    <td bgcolor="#ffffff " style="height:50px; border-radius: 25px 25px 0 0; ">
+                    <td bgcolor="#ffffff" style="height:50px; border-radius: 25px 25px 0 0; ">
 
                     </td>
                 </tr>
-                <!-- Hero Image, Flush : END -->
+                <!-- END - Column Ronded corners Top -->
 
-                <!-- 1 Column Text + Button : BEGIN -->
+
+                <!-- Column Text 1 -->
                 <tr>
-                    <td bgcolor="#ffffff ">
+                    <td bgcolor="#ffffff">
                         <table role="presentation " aria-hidden="true " cellspacing="0 " cellpadding="0 " border="0 " width="100% ">
+                            <!-- Column H2 1 -->
                             <tr>
                                 <td bgcolor="#fafafa " style="padding: 5px 40px 5px; text-align: left; ">
                                     <h2 style="margin: 0; font-family: sans-serif; font-size: 15px; line-height: 27px; color: #000; font-weight: normal; ">
-                                        <p>There is a new BID on <a href="# " style="color:#6702d1; text-decoration: none; border: 2px solid #6702d1; border-radius:5px; padding: 5px; display: inline-block;">nodlet-dev.scalingo.io</a></p>
+                                        <p>There is a new BID on <a href="https://putsmail.com" style="color:#6702d1; text-decoration: none; border: 2px solid #6702d1; border-radius:5px; padding: 5px; display: inline-block;">nodlet-dev.scalingo.io</a></p>
                                     </h2>
                                 </td>
                             </tr>
+                            <!-- END - Column H2 1 -->
+                            <!-- Column UL 1 -->
                             <tr>
                                 <td style="padding: 0 40px 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000; text-align: left; ">
                                     <ul>
@@ -265,13 +235,17 @@
                                     </ul>
                                 </td>
                             </tr>
+                            <!-- END - Column UL 1 -->
+                            <!-- Column H2 2 -->
                             <tr>
-                                <td bgcolor="#fafafa " style="padding: 5px 40px 5px; text-align: left; ">
+                                <td bgcolor="#fafafa" style="padding: 5px 40px 5px; text-align: left; ">
                                     <h2 style="margin: 0; font-family: sans-serif; font-size: 15px; line-height: 27px; color: #000; font-weight: normal; ">
                                         <p>Currently on the plateform for the same shipment period:</p>
                                     </h2>
                                 </td>
                             </tr>
+                            <!-- END - Column H2 2 -->
+                            <!-- Column UL 2 -->
                             <tr>
                                 <td style="padding: 0 40px 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000; text-align: left; ">
                                     <ul>
@@ -281,43 +255,41 @@
                                     </ul>
                                 </td>
                             </tr>
+                            <!-- END - Column UL 2 -->
                         </table>
                     </td>
                 </tr>
+                <!-- Column Ronded corners Bottom -->
                 <tr>
-                    <td bgcolor="#ffffff " style="height:50px; border-radius: 0 0 25px 25px; ">
+                    <td bgcolor="#ffffff" style="height:50px; border-radius: 0 0 25px 25px; ">
 
                     </td>
                 </tr>
+                <!-- END - Column Ronded corners Bottom -->
+                <!-- Column Space on Bottom -->
                 <tr>
                     <td bgcolor="#2b42b2" style="height:50px;">
 
                     </td>
                 </tr>
-                <!-- 1 Column Text + Button : END -->
+                <!-- END - Column Space on Bottom -->
+
             </table>
-            <!-- Email Body : END -->
-
-            <!-- Email Footer : BEGIN -->
-
-            <!-- Email Footer : END -->
-
-            <!--[if mso]>
-            </td>
-            </tr>
-            </table>
-            <![endif]-->
         </div>
-        <table role="presentation " bgcolor="#FFF" aria-hidden="true " cellspacing="0 " cellpadding="0 " border="0 " align="center " width="100%">
+        <!-- Email Body : END -->
+
+        <!-- Email Footer : BEGIN -->
+        <table role="presentation " bgcolor="#ffffff" aria-hidden="true " cellspacing="0 " cellpadding="0 " border="0 " align="center " width="100%">
             <tr>
                 <td style="padding: 10px 10px 10px 0;width: 100%;font-size: 12px; font-family: sans-serif; line-height:18px; text-align: center; color: #888888; " class="x-gmail-data-detectors ">
 
                     <unsubscribe style="color: #000; ">
-                        <p>To unsuscribe from these notifications please check your profile <a href="# " style="text-decoration: none; color: #000; font-weight: bold; ">settings</a>.</p>
+                        <p>To unsuscribe from these notifications please check your profile <a href="https://putsmail.com" style="text-decoration: none; color: #000; font-weight: bold; ">settings</a>.</p>
                     </unsubscribe>
                 </td>
             </tr>
         </table>
+        <!-- Email Footer : END -->
     </center>
 </body>
 
