@@ -164,37 +164,23 @@
     <center style="width: 100%; background: #2b42b2; text-align: left;">
         <!-- Email Header : BEGIN -->
 
-        <table role="presentation" class="test" bgcolor="#ffffff" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="height: 70px;">
+        <table role="presentation" class="test" bgcolor="#ffffff" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="height: 65px; background-image: url(https://image.ibb.co/ju25vv/Logo_230_x_50.png); background-position: 5% 50%; background-repeat: no-repeat; background-size: auto 30%"
+            ;>
             <tr>
+                <td background="https://image.ibb.co/ju25vv/Logo_230_x_50.png" bgcolor "#ffffff" style="padding: 5px 0; text-align: center; display: table-cell; vertical-align: middle; background-position: 20% 50%; background-repeat: no-repeat; background-size: auto 70%; border: 1px solid red; height: 65px; width: 30%; position: absolute;">
+                    <!--[if gte mso 9]>
+  <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" height:60px;">
+    <v:fill type="tile" src="url(https://image.ibb.co/ju25vv/Logo_230_x_50.png") />
+    <v:textbox style="mso-fit-shape-to-text:false" inset="0,0,0,0">
+  <![endif]-->
+                    <!--[if gte mso 9]>
+    </v:textbox>
+  </v:rect>
+  <![endif]-->
 
-                <td style="text-align: center; vertical-align: middle; font-size: 0;">
-                    <!--[if (gte mso 9)|(IE)]>
-            <table width="90%" align="center" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                    <td>
-            <![endif]-->
-                    <div style="width: 90%; display: inline-block; vertical-align: middle; max-width: 230px;">
-                        <table width="100%">
-                            <tr>
-                                <td><img src="https://image.ibb.co/ju25vv/Logo_230_x_50.png" style="width: 100%; display:block; height:auto;"></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <!--[if (gte mso 9)|(IE)]>
-            </td>
-            <td>
-            <![endif]-->
                 </td>
-
-
-
-
-
-
-                <td style="width: 33%;  margin: 0 auto; text-align: center;">
-                    <h1 style="font-family: Arial, Helvetica, sans-serif;"> Hello </h1>
-                </td>
-                <td style="width: 33%;">
+                <td>
+                    <h1 style="font-family: Arial, Helvetica, sans-serif;  width: 100%; position: absolute; top: 15px; left: 50%; "> Hello </h1>
                 </td>
 
             </tr>
